@@ -24,7 +24,13 @@
         
         @include('layouts.nav')
       </div>
-
+      <h2>
+        @if(Sentinel::check())
+          Hello, {{ Sentinel::getUser()->first_name }}
+        @else
+          Authentication with Sentinel
+        @endif
+      </h2>
       @yield('content')
 
       <!-- Site footer -->
